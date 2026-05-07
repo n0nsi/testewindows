@@ -19,24 +19,25 @@ function handleSubmit(event) {
     const form = event.target;
     const name = form.querySelector('input[type="text"]').value;
     const email = form.querySelector('input[type="email"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
     const message = form.querySelector('textarea').value;
     
     // Simular envio de mensagem
-    console.log('Mensagem enviada:', { name, email, message });
+    console.log('Mensagem de contato:', { name, email, phone, message });
     
     // Mostrar alerta
-    alert(`Obrigado ${name}! Sua mensagem foi recebida. Entraremos em contato em breve.`);
+    alert(`Obrigado ${name}! Sua mensagem foi recebida. Entraremos em contato no telefone ${phone} em breve!`);
     
     // Limpar formulário
     form.reset();
 }
 
-// Adicionar efeito de scroll
+// Adicionar efeito de scroll na navbar
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 0) {
-        navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+        navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
     } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
     }
 });
